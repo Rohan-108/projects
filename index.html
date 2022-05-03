@@ -44,11 +44,6 @@
                 name: "Uska Hi Banana",
                 title: "Uska Hi Banana",
                 artist: 'arjit singh',
-            },
-            {
-                name: "Kali kali Zulfon Ke",
-                title: "Kali kali zulfon",
-                artist: 'nusrat ali khan',
             }
     ];
         const playMusic=()=>{
@@ -86,6 +81,17 @@
             };
             next.addEventListener('click',nextSong);
             prev.addEventListener('click',prevSong);
+         window.addEventListener('keydown',(e)=>{
+                 if (e.key === " ") { 
+                    isPlaying ? pauseMusic() : playMusic();
+                }
+                if(e.key==="ArrowRight"){
+                    nextSong();
+                }
+                if(e.key==="ArrowLeft"){
+                    prevSong();
+                }
+            });
     </script>
 </body>
 </html>
