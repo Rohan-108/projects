@@ -145,12 +145,12 @@
             music.addEventListener('ended',nextSong);
         
                const canvas = document.getElementById('canvas');
-                const audioCtx = new AudioContext();
                 const ctx = canvas.getContext('2d');
                 let audioSource;
                 let analyser;
             function audioVisualizer(){
                  //audio1.play();//playing sound on click
+                 const audioCtx = new AudioContext();
                 audioSource = audioCtx.createMediaElementSource(music);//giving source 
                 analyser = audioCtx.createAnalyser();//creating analyser to analyse frequency
                 audioSource.connect(analyser);//connecting it to our source
