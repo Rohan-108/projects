@@ -151,7 +151,10 @@
             function audioVisualizer(){
                  //audio1.play();//playing sound on click
                  const audioCtx = new AudioContext();
-                audioSource = audioCtx.createMediaElementSource(music);//giving source 
+                try{
+                audioSource = audioCtx.createMediaElementSource(music);//giving source
+                }catch(e){
+                return true;}
                 analyser = audioCtx.createAnalyser();//creating analyser to analyse frequency
                 audioSource.connect(analyser);//connecting it to our source
                 analyser.connect(audioCtx.destination);//connecting source to speakers
